@@ -1,0 +1,24 @@
+# Drupal
+/web/sites/default/files
+/web/sites/*/files
+/web/sites/*/private
+/web/sites/*/settings.php
+
+# Composer
+/vendor/
+/composer.lock
+
+# Lando
+.lando.yml
+.lando/
+*.gz
+*.sql
+*.tar
+
+# IDEs
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
