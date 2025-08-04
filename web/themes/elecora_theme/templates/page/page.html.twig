@@ -701,36 +701,60 @@
 
         </div>
       </section>
+<section class="section cta">
+        <div class="container">
 
-  {{ page.highlighted }}
+          <ul class="cta-list">
 
-  {{ page.help }}
+            {# <li>
+              <div class="cta-card" style="background-image: url('./assets/images/cta-1.jpg')">
+                <p class="card-subtitle">Adidas Shoes</p>
 
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+                <h3 class="h2 card-title">The Summer Sale Off 50%</h3>
 
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
+                <a href="#" class="btn btn-link">
+                  <span>Shop Now</span>
 
-    {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true" role="img" class="md hydrated"></ion-icon>
+                </a>
+              </div>
+            </li>
 
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
+            <li>
+              <div class="cta-card" style="background-image: url('./assets/images/cta-2.jpg')">
+                <p class="card-subtitle">Nike Shoes</p>
 
-  </main>
+                <h3 class="h2 card-title">Makes Yourself Keep Sporty</h3>
 
-  {% if page.footer %}
-    <footer role="contentinfo">
+                <a href="#" class="btn btn-link">
+                  <span>Shop Now</span>
+
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true" role="img" class="md hydrated"></ion-icon>
+                </a>
+              </div>
+            </li> #}
+{{ page.cta_section }}
+          </ul>
+
+        </div>
+      </section>
+  
+
+ <section class="section service">
+        <div class="container">
+
+          <ul class="service-list">
+           {{page.services}}
+           
+
+          </ul>
+
+        </div>
+      </section>
+
+ 
       {{ page.footer }}
-    </footer>
-  {% endif %}
+  
+ 
 
 

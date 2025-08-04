@@ -27,3 +27,42 @@ function elecora_theme_preprocess_page(array &$variables): void {
 function elecora_theme_preprocess_node(array &$variables): void {
 
 }
+
+
+use Drupal\paragraphs\Entity\Paragraph;
+
+/**
+ * Implements hook_theme_suggestions_paragraph_alter().
+ */
+
+
+ function elecora_theme_theme_suggestions_paragraph_alter(array &$suggestions, array $variables) {
+    if (
+      isset($variables['elements']['#paragraph']) &&
+      $variables['elements']['#paragraph'] instanceof Paragraph
+    ) {
+      $paragraph = $variables['elements']['#paragraph'];
+      $bundle = $paragraph->bundle();
+      $view_mode = $paragraph->view_mode;
+  
+      // Add suggestion based on view mode
+      if (!empty($view_mode)) {
+        $suggestions[] = 'paragraph__' . $bundle . '__' . $view_mode;
+      }
+  
+      // Add suggestion based on parent bundle
+      if ($paragraph->getParentEntity()) {
+        $parent = $paragraph->getParentEntity();
+        $parent_type = $parent->getEntityTypeId(); // e.g. 'block_content'
+        $parent_bundle = $parent->bundle();        // e.g. 'services_block'
+  
+        \Drupal::logger('theme_suggestion')->notice('Paragraph inside: @type / @bundle', [
+          '@type' => $parent_type,
+          '@bundle' => $parent_bundle,
+        ]);
+  
+        // Suggestion: paragraph--services-block--cta-paragraph.html.twig
+        $suggestions[] = 'paragraph__' . $parent_bundle . '__' . $bundle;
+      }
+    }
+  }

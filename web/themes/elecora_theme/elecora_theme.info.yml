@@ -12,6 +12,6 @@ regions:
   collection_section: 'Collection Section'
   products_section: 'Products Section'
   cta_section: 'CTA Section'
-  Services: 'services'
+  services: 'services'
   insta_section: 'Insta Section'
   footer: 'Footer'
