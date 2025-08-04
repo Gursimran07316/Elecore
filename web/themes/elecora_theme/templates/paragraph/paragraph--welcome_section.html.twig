@@ -1,0 +1,19 @@
+<div class="main-content">
+  <div class="fluid-container">
+    <div class="section-welcome">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          {{ content.field_image }} {# This will render the <img> tag from your field override #}
+        </div>
+        <div class="col-md-8 text-center welcome-section">
+          <br>
+          {{ content.field_title }} {# This will render the title field as <h2> via field.html.twig #}
+          <br>
+          {{ content.field_description }} {# This will render the description paragraph #}
+          <br>
+          <a href="#" class="button-grey animated fadeInUp">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

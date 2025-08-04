@@ -1,0 +1,8 @@
+{% if items %}
+  {% for item in items %}
+    {% if item.content['#item'].entity.uri.value %}
+      {% set image_url = file_url(item.content['#item'].entity.uri.value) %}
+      <img src="{{ image_url }}" alt="{{ item.content['#item'].alt }}" class="img-responsive animated fadeInLeft">
+    {% endif %}
+  {% endfor %}
+{% endif %}

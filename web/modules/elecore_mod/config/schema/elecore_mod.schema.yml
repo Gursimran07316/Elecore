@@ -1,0 +1,7 @@
+views.style.elecore_mod_products_style:
+  type: views_style
+  label: 'Products style'
+  mapping:
+    wrapper_class:
+      type: string
+      label: 'Wrapper class'

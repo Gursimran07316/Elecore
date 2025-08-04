@@ -1,0 +1,17 @@
+name: elecora theme
+type: theme
+base theme: stark
+description: A flexible theme with a responsive, mobile-first layout.
+package: Custom
+core_version_requirement: ^10 || ^11
+libraries:
+  - elecora_theme/global
+regions:
+  header: 'Header'
+  hero_section: 'Hero Section'
+  collection_section: 'Collection Section'
+  products_section: 'Products Section'
+  cta_section: 'CTA Section'
+  Services: 'services'
+  insta_section: 'Insta Section'
+  footer: 'Footer'

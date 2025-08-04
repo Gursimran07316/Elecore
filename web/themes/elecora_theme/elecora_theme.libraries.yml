@@ -1,0 +1,9 @@
+# Main theme library.
+global:
+  js:
+    js/elecora-theme.js: {}
+    js/script.js: {}
+  css:
+    base:
+      css/style.css: {}
+ 

@@ -1,0 +1,16 @@
+<div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 text-center">
+					<article class="service animated fadeInUp">
+						<div class="service-header">
+                        <span class="s-left"></span>
+							<span class="s-right"></span>
+							<h4>{{content.field_service_title}}</h4>
+						</div>
+						<div class="service-icon">
+                       {% set class_name = 'fa fa-' ~ paragraph.field_service_icon.value|lower %}
+<i class="{{ class_name }}"></i>
+						</div>
+						<div class="service-text">
+							<p>{{content.field_service_text}}</p>
+						</div>
+					</article>
+				</div>

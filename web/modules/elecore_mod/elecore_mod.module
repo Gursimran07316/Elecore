@@ -1,0 +1,42 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Primary module hooks for Elecore mod module.
+ */
+
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Prepares variables for views-style-elecore-mod-products-style.html.twig template.
+ */
+function template_preprocess_views_style_elecore_mod_products_style(array &$variables): void {
+  $view = $variables['view'];
+  $options = $view->style_plugin->options;
+
+  // Fetch wrapper classes from handler options.
+  if ($options['wrapper_class']) {
+    $variables['attributes']['class'] = explode(' ', $options['wrapper_class']);
+  }
+
+  $variables['default_row_class'] = $options['default_row_class'];
+  foreach ($variables['rows'] as $id => $row) {
+    $variables['rows'][$id] = [
+      'content' => $row,
+      'attributes' => new Attribute(),
+    ];
+    $variables['rows'][$id]['title'] = $row['#row']->_entity->getTitle();
+    $variables['rows'][$id]['price'] = $row['#row']->_entity->get('field_product_price')->getValue()[0]['value'];
+    if (!$row['#row']->_entity->get('field_product_image')->isEmpty()) {
+      $file = $row['#row']->_entity->get('field_product_image')->entity;
+      if ($file) {
+        $variables['rows'][$id]['image'] = \Drupal::service('file_url_generator')->generateString($file->getFileUri());
+      }
+    }
+    if ($row_class = $view->style_plugin->getRowClass($id)) {
+      $variables['rows'][$id]['attributes']->addClass($row_class);
+    }
+  }
+}

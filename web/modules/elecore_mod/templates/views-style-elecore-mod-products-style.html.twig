@@ -1,0 +1,82 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a view template to display a list of rows.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the container.
+ * - rows: A list of rows.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's contents.
+ * - title: The title of this group of rows. May be empty.
+ *
+ * @see template_preprocess_views_style_elecore_mod_products_style()
+ */
+#}
+
+ 
+  {% for row in rows %}
+    
+    <li class="product-item">
+              <div class="product-card" tabindex="0">
+
+                <figure class="card-banner">
+                  <img src="{{ row.image }}" width="312" height="350" loading="lazy" alt="Running Sneaker Shoes" class="image-contain">
+
+                  <div class="card-badge">New</div>
+
+<ul class="card-action-list">
+
+  <li class="card-action-item">
+    <button class="card-action-btn" aria-labelledby="card-label-1">
+      <i class="fas fa-cart-shopping" aria-hidden="true"></i>
+    </button>
+    <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+  </li>
+
+  <li class="card-action-item">
+    <button class="card-action-btn" aria-labelledby="card-label-2">
+      <i class="fas fa-heart" aria-hidden="true"></i>
+    </button>
+    <div class="card-action-tooltip" id="card-label-2">Add to Wishlist</div>
+  </li>
+
+  <li class="card-action-item">
+    <button class="card-action-btn" aria-labelledby="card-label-3">
+      <i class="fas fa-eye" aria-hidden="true"></i>
+    </button>
+    <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+  </li>
+
+  <li class="card-action-item">
+    <button class="card-action-btn" aria-labelledby="card-label-4">
+      <i class="fas fa-rotate" aria-hidden="true"></i>
+    </button>
+    <div class="card-action-tooltip" id="card-label-4">Compare</div>
+  </li>
+
+</ul>
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-cat">
+                    <a href="#" class="card-cat-link">Men</a> /
+                    <a href="#" class="card-cat-link">Women</a>
+                  </div>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">{{row.title}}</a>
+                  </h3>
+
+                  <data class="card-price" value="{{row.price}}">{{row.price}}</data>
+
+                </div>
+
+              </div>
+            </li>
+     
+
+ 
+  {% endfor %}
+
