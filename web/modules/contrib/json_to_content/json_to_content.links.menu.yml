@@ -1,0 +1,20 @@
+json_to_content.admin_link:
+  title: 'JSON Content type Builder'
+  description: 'Create content types and fields from JSON.'
+  route_name: json_to_content.form
+  parent: system.admin_config_system
+  weight: 0
+
+json_to_content.admin_content_link:
+  title: 'JSON Content Builder'
+  description: 'Create content from JSON.'
+  route_name: json_to_content.add_content_form
+  parent: system.admin_config_system
+  weight: 0
+
+json_to_content.admin_json_export_link:
+  title: 'Export content into JSON'
+  description: 'Create content from JSON.'
+  route_name: json_to_content.export_form
+  parent: system.admin_config_system
+  weight: 0

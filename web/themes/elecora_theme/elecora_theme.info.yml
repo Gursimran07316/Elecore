@@ -11,6 +11,7 @@ regions:
   hero_section: 'Hero Section'
   collection_section: 'Collection Section'
   products_section: 'Products Section'
+  content: 'content'
   cta_section: 'CTA Section'
   services: 'services'
   insta_section: 'Insta Section'

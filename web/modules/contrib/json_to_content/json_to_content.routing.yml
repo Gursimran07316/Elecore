@@ -1,0 +1,23 @@
+json_to_content.form:
+  path: '/admin/config/content/json-content-builder'
+  defaults:
+    _form: '\Drupal\json_to_content\Form\JsonContentBuilderForm'
+    _title: 'JSON Content Builder'
+  requirements:
+    _permission: 'administer site configuration'
+
+json_to_content.add_content_form:
+  path: '/admin/content/json-content-create'
+  defaults:
+    _form: '\Drupal\json_to_content\Form\JsonContentCreateForm'
+    _title: 'Create Content from JSON'
+  requirements:
+    _permission: 'administer site configuration'
+
+json_to_content.export_form:
+  path: '/admin/content/json-export'
+  defaults:
+    _form: '\Drupal\json_to_content\Form\JsonContentExportForm'
+    _title: 'Export Content to JSON'
+  requirements:
+    _permission: 'administer site configuration'

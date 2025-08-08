@@ -1,0 +1,12 @@
+name: 'Json to content type builder'
+type: module
+description: 'Create content types and fields from a JSON structure.'
+core_version_requirement: ^10 || ^11
+dependencies:
+  - field
+  - node
+
+# Information added by Drupal.org packaging script on 2025-06-03
+version: '1.0.3'
+project: 'json_to_content'
+datestamp: 1748977291

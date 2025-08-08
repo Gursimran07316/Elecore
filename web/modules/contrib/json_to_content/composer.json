@@ -1,0 +1,12 @@
+{
+    "name": "drupal/json_to_content",
+    "description": "Provides import/export of content types and nodes via JSON in Drupal.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "Drupal\\json_to_content\\": "src/"
+      }
+    }
+  }
