@@ -334,22 +334,22 @@ Below is a simplified diagram of how content types, Paragraphs, and custom code 
 ```mermaid
 graph TD
     subgraph Drupal_Backend["Drupal Backend"]
-        Products[Product Content Type\n- field_description\n- field_product_image\n- field_product_price]
-        CTA_Paragraph[CTA Paragraph Type\n- field_cta_title\n- field_cta_description\n- field_cta_image]
-        Other_Paragraphs[Other Paragraph Types\n(Collection, Services+CTA, Client Section)]
-        Views[Drupal View: Product Listing]
-        AI_Agent[Drupal AI 1.1 Agent]
+        Products["Product Content Type<br/>field_description<br/>field_product_image<br/>field_product_price"]
+        CTA_Paragraph["CTA Paragraph Type<br/>field_cta_title<br/>field_cta_description<br/>field_cta_image"]
+        Other_Paragraphs["Other Paragraph Types<br/>(Collection, Services+CTA, Client Section)"]
+        Views["Drupal View: Product Listing"]
+        AI_Agent["Drupal AI 1.1 Agent"]
     end
 
     subgraph Theme["Custom Theme: elecora_theme"]
-        Page_Twig[page.html.twig (Regions: header, hero_section, collection_section, etc.)]
-        Paragraph_Twig[paragraph--*.html.twig Templates]
-        Views_Twig[views-style-elecore-mod-products-style.html.twig]
-        CSS_JS[elecora_theme/global\ncss/style.css, js/elecora-theme.js, js/script.js]
+        Page_Twig["page.html.twig<br/>(Regions: header, hero_section, collection_section, etc.)"]
+        Paragraph_Twig["paragraph--*.html.twig Templates"]
+        Views_Twig["views-style-elecore-mod-products-style.html.twig"]
+        CSS_JS["elecora_theme/global<br/>css/style.css, js/elecora-theme.js, js/script.js"]
     end
 
     subgraph Module["Custom Module: Elecore mod"]
-        Preprocess[template_preprocess_views_style_elecore_mod_products_style()]
+        Preprocess["template_preprocess_views_style_elecore_mod_products_style()"]
     end
 
     Products --> Views
