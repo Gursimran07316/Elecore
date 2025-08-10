@@ -2,9 +2,6 @@
 
 A Drupal 11 electronics storefront/landing page using a custom theme (`elecora_theme`), Paragraphs-based sections, and a custom module (`Elecore mod`) that supplies a **Views style twig + preprocess** for rendering product cards. The site also includes an **AI agent (Drupal AI 1.1)** to answer laptop product questions (work-in-progress).
 
-> This README documents the exact files and behavior you shared. If you want me to add the remaining YAML (e.g., `*.libraries.yml`) or the AI agent’s final model/provider settings, send those and I’ll append them.
-
----
 
 ## Tech Stack
 
