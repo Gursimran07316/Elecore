@@ -135,7 +135,6 @@ function elecora_theme_theme_suggestions_paragraph_alter(array &$suggestions, ar
   - `paragraph--cta-paragraph.html.twig`
   - `paragraph--services-block--cta-paragraph.html.twig`
 
-> These Paragraph templates expect fields like titles, descriptions, media, and links. If you share the field machine names for each paragraph type, I’ll document them explicitly.
 
 ---
 
@@ -217,7 +216,7 @@ This template + preprocess implies a **Views style plugin** with theme hook `vie
 - Ensure the module that **declares the style plugin** is present (a `Plugin/views/style/*.php` class that sets `theme = "views_style_elecore_mod_products_style"`), or
 - You can temporarily render via a custom block/theme template, but the intended use is a proper Views Style plugin so the `$view->style_plugin` options (`wrapper_class`, `default_row_class`) are available.
 
-> If you have the plugin class, send it and I’ll document the exact steps/UI label.
+
 
 ### Expected Product Fields
 The preprocess accesses:
@@ -245,7 +244,6 @@ Make sure your **Product** content type defines at least:
   4. Place the **chat block** on relevant pages or expose a route.
 - **Security:** Store API keys outside Git; use environment variables.
 
-> Share your exact provider/model and retrieval approach and I’ll lock these steps to your implementation.
 
 ---
 
@@ -289,22 +287,10 @@ drush cr
    - Add fields or use “Content” row style depending on your plugin/template design.  
    - Ensure the view exposes the node entity in `$row['#row']->_entity` (Row style: “Content” often does this).
 
-> If you prefer, I can export a `config/sync` for these pieces once you confirm field names on all paragraphs and the Product type.
+
 
 ---
 
-## Troubleshooting
-
-- **Upload directory cannot be created**  
-  Ensure `web/sites/default/files` exists and is writable.
-- **Custom Paragraph template not applied**  
-  Run `drush cr`. Confirm template suggestion matches your Paragraph **bundle** and **view mode**, or the **parent bundle** + current bundle as per `elecora_theme_theme_suggestions_paragraph_alter()`.
-- **Views style not visible**  
-  You likely need the **Views style plugin class** that references `views_style_elecore_mod_products_style`. Send it over and I’ll document/verify.
-- **AI agent not responding**  
-  Check provider API key, model name, and outbound access from the container. Log errors via Recent log messages or `\Drupal::logger`.
-
----
 
 ## Roadmap
 
